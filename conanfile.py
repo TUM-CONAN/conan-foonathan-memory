@@ -9,8 +9,8 @@ class FastCDRConan(ConanFile):
     url = "https://github.com/TUM-CONAN/conan-foonathan-memory.git"
     description = "Conan wrapper for foonathan-memory"
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False]}
-    default_options = {"shared": True}
+    options = {"shared": [False]}
+    default_options = {"shared": False}
     generators = "cmake"
 
     def source(self):        
