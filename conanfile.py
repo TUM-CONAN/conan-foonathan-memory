@@ -3,9 +3,9 @@ from conans import ConanFile, CMake, tools
 
 class FastCDRConan(ConanFile):
     name = "foonathan-memory"
-    version = "1.0.0"
+    version = "0.7-2"
     license = "Apache License 2.0"
-    author = "Frieder Pankratz"
+    author = "Frieder Pankratz / Ulrich Eck"
     url = "https://github.com/TUM-CONAN/conan-foonathan-memory.git"
     description = "Conan wrapper for foonathan-memory"
     settings = "os", "compiler", "build_type", "arch"
@@ -15,7 +15,7 @@ class FastCDRConan(ConanFile):
 
     def source(self):        
         git = tools.Git()        
-        git.clone("https://github.com/FriederPankratz/memory.git", self.version)
+        git.clone("https://github.com/foonathan/memory", "v%s" %self.version)
         # This small hack might be useful to guarantee proper /MT /MD linkage
         # in MSVC if the packaged project doesn't have variables to set it
         # properly
